@@ -128,7 +128,7 @@
             </h3>
 
             <div class="tab-content">
-                {{ _self.render_migration_details(collector) }}
+                {{ _self.render_migration_details(collector, profiler_markup_version) }}
             </div>
         </div>
 
@@ -136,7 +136,7 @@
             <h3 class="tab-title">Configuration</h3>
 
             <div class="tab-content">
-                {{ _self.render_configuration_details(collector) }}
+                {{ _self.render_configuration_details(collector, profiler_markup_version) }}
             </div>
         </div>
     </div>
@@ -219,7 +219,7 @@
     </table>
 {% endmacro %}
 
-{% macro render_migration(migration) %}
+{% macro render_migration(migration, profiler_markup_version) %}
     <tr>
         <td class="font-normal">
             {% if migration.file %}
