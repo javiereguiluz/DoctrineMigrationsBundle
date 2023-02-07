@@ -66,10 +66,10 @@
         {% set label = new_migrations > 0 ? 'label-status-error' : label %}
         <span class="label {{ label }}">
             <span class="icon">
-                {% if profiler_markup_version >= 3 %}
-                    {{ include('@DoctrineMigrations/Collector/icon-v3.svg') }}
-                {% else %}
+                {% if profiler_markup_version < 3 %}
                     {{ include('@DoctrineMigrations/Collector/icon.svg') }}
+                {% else %}
+                    {{ include('@DoctrineMigrations/Collector/icon-v3.svg') }}
                 {% endif %}
             </span>
 
