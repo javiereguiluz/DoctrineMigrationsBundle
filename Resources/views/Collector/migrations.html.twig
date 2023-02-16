@@ -11,7 +11,7 @@
             {% set status_color = new_migrations > 0 ? 'red' : status_color %}
 
             {% set icon %}
-                {% if profiler_markup_version == 3 %}
+                {% if profiler_markup_version >= 3 %}
                     {{ include('@DoctrineMigrations/Collector/icon-v3.svg') }}
                 {% else %}
                     {{ include('@DoctrineMigrations/Collector/icon.svg') }}
